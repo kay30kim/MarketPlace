@@ -79,9 +79,9 @@ main {
 	align-items: center;
 }
 
-/*#mobile-menu.open { *//* open띄어쓰기 mobile-menu .open은 하위를 의미하는거x*/
-	/*display: flex;
-}*/
+#mobile-menu.open { /* open띄어쓰기 mobile-menu .open은 하위를 의미하는거x*/
+	display: flex;
+}
 
 #mobile-menu nav {
 	height: 20rem;
