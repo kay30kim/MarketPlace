@@ -1,0 +1,52 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Signup'}) %>
+	<link rel="stylesheet" href="/styles/forms.css">
+	<link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+	<%- include('../../shared/includes/header') %>
+	<main>
+		<h1>Create New Account</h1>
+		<% if (inputData.errorMessage) { %>
+			<section class="alert">
+				<h2>Invalid Input</h2>
+				<p><%= inputData.errorMessage %></p>
+			</section>
+		<% } %>
+		<form action="/signup" method="POST">
+			<input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+			<p>
+				<label for="email">E-Mail</label>
+				<input types="email" id="email" name="email" value ="<%= inputData.email %>"  required>
+			</p>
+			<p>
+				<label for="confirm-email">Confirm Email</label>
+				<input types="email" id="email" name="confirm-email" value ="<%= inputData.confirmEmail %>" required>
+			</p>
+			<p>
+				<label for="password">Password</label>
+				<input types="password" id="password" name="password" minlength="6" value ="<%= inputData.password %>" required>
+			</p>
+			<hr>
+			<p>
+				<label for="fullname">Full name</label>
+				<input types="text" id="fullname" name="fullname" value ="<%= inputData.fullname %>" required>
+			</p>
+			<p>
+				<label for="street">Street</label>
+				<input types="text" id="street" name="street" value ="<%= inputData.street %>" required>
+			</p>
+			<p>
+				<label for="postal">Postal Code</label>
+				<input types="text" id="postal" name="postal" value ="<%= inputData.postal %>">
+			</p>
+			<p>
+				<label for="city">City</label>
+				<input types="text" id="city" name="city" value ="<%= inputData.ciry %>" required>
+			</p>
+			<button class="btn">Create Account</button>
+			<p id="switch-form"><a href="/login">Login instead</a></p>
+		</form>
+	</main>
+
+
+<%- include('../../shared/includes/footer') %>
