@@ -74,10 +74,14 @@ main {
 	height: calc(100vh - 5rem);
 	width : 100%;
 	background-color: var(--color-gray-700);
-	display: flex;
+	display: none; /* show(flex) when button clicked*/
 	flex-direction: column;
 	align-items: center;
 }
+
+/*#mobile-menu.open { *//* open띄어쓰기 mobile-menu .open은 하위를 의미하는거x*/
+	/*display: flex;
+}*/
 
 #mobile-menu nav {
 	height: 20rem;
